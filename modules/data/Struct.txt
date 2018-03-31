@@ -1,0 +1,38 @@
+root:
+    elements [] len=1
+        "name" : "NextBuses" 
+        elements: [] => all Buses
+            "name": "NextBus"
+            elements: [] => Bus general information
+                {}
+                    name: RouteNo 
+                    elements: [] len=1
+                        {}
+                            text: str
+                {} 
+                    name: RouteName
+                    elements: [] len=1
+                        {} 
+                            text=str
+               {} 
+                    name: "Schedules"
+                    elements : [] => This bus' schedules
+                        {} 
+                            name: "Schedule"
+                            elements: [] => this schedule's info
+                                {} 
+                                    name: "Destination" 
+                                    elements: [] len=1
+                                        "text": str
+                                {}
+                                    name: "ExpectedLeaveTime" 
+                                    elements: [] len=1
+                                        "text" :str
+                                {}
+                                    name: "CancelledTrip" 
+                                    elements: [] len=1
+                                        "text" :str "true" vs "false"
+                                 {}
+                                    name: "CancelledStop" 
+                                    elements: [] len=1
+                                        "text" :str                               

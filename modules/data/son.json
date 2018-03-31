@@ -1,0 +1,198 @@
+[
+    19,
+    {
+        "name": "005",
+        "schedules": [
+            {
+                "stopcancel": "false",
+                "time": "6:24pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "6:26pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "6:37pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "6:41pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "6:50pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "6:51pm 2018-03-29",
+                "tripcancel": "false"
+            }
+        ]
+    },
+    {
+        "name": "019",
+        "schedules": [
+            {
+                "stopcancel": "false",
+                "time": "6:23pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "6:46pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "6:51pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "6:55pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "7:05pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "7:17pm 2018-03-29",
+                "tripcancel": "false"
+            }
+        ]
+    },
+    {
+        "name": "022",
+        "schedules": [
+            {
+                "stopcancel": "false",
+                "time": "6:22pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "6:34pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "6:41pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "6:53pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "7:05pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "7:17pm 2018-03-29",
+                "tripcancel": "false"
+            }
+        ]
+    },
+    {
+        "name": "044",
+        "schedules": [
+            {
+                "stopcancel": "false",
+                "time": "6:22pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "6:26pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "6:49pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "7:07pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "7:17pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "7:32pm 2018-03-29",
+                "tripcancel": "false"
+            }
+        ]
+    },
+    {
+        "name": "209",
+        "schedules": [
+            {
+                "stopcancel": "false",
+                "time": "8:19pm 2018-03-29",
+                "tripcancel": "false"
+            }
+        ]
+    },
+    {
+        "name": "210",
+        "schedules": [
+            {
+                "stopcancel": "false",
+                "time": "6:19pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "6:36pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "6:51pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "7:06pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "7:21pm 2018-03-29",
+                "tripcancel": "false"
+            },
+            {
+                "stopcancel": "false",
+                "time": "7:51pm 2018-03-29",
+                "tripcancel": "false"
+            }
+        ]
+    },
+    {
+        "name": "211",
+        "schedules": [
+            {
+                "stopcancel": "false",
+                "time": "6:19pm 2018-03-29",
+                "tripcancel": "false"
+            }
+        ]
+    }
+]
