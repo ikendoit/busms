@@ -3,7 +3,7 @@ import urllib
 from flask import Flask, request, redirect, jsonify
 from twilio.twiml.messaging_response import Message, MessagingResponse
 
-from modules.Runner import runner
+from modules.Runner import runner, runner_api
 
 app = Flask(__name__)
 
@@ -11,12 +11,22 @@ app = Flask(__name__)
 def index():
     query = "50077"
     if request.args.get("query"):
-
         #cut first and last characters because 
         #GET params some how keeps quotes: '"' around its string
         query = request.args.get("query")[1:-1];
-    data = runner(query)
-    return data
+    data = runner_api(query)
+    return jsonify(data)
+
+@app.route("/api", methods=["GET"])
+def api_bus():
+    query = "50077"
+    if request.args.get("query"):
+        #cut first and last characters because 
+        #GET params some how keeps quotes: '"' around its string
+        query = request.args.get("query")[1:-1];
+    data = runner_api(query)
+    return jsonify(data)
+
 
 
 @app.route("/sms", methods=["POST"])

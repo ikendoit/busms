@@ -10,29 +10,27 @@ r = redis.StrictRedis(host="localhost",port=6379, db=0)
 # @params: stop_d 
 # @return: dict object
 def parse(stop_id): 
+    #set time stamp: hour*60+minute; compare with old timestamp to 
+    #see if data is still fresh
     cur_min = datetime.datetime.now().minute
     cur_hour = datetime.datetime.now().hour
+    cur_time = cur_hour*60 + cur_min
+
     interval = 5;
     do_scrape = False;
     old_data = r.get(stop_id)
 
     if old_data:
-        old_min = old_data[0]
+        old_time = old_data[0]
     else :
-        old_min = cur_min
+        old_time = cur_time
 
-    #algorithm to check if a is within (b,b+interval), a & b = minutes
-    if cur_min > old_min and cur_min <= old_min+interval: 
+    #check if current time stamp is new or old
+    if cur_time > old_time and cur_time <= old_time+interval: 
         do_scrape = False;
         print("We have this data "+stop_id);
-    elif old_min >= 60-interval and cur_min <= 60 - interval: 
-        cur_min+=60;
-        if cur_min > old_min and cur_min <= old_min+interval: 
-            do_scrape = False
-            print("We have this data: "+stop_id);
-        else:
-            do_scrape = True
     else: 
+        print("init fetching process for"+stop_id);
         do_scrape = True
 
     #if data is still fresh
@@ -42,13 +40,10 @@ def parse(stop_id):
         return old_data
 
     buses = []
-    buses.append(cur_min);
+    buses.append(cur_time);
     xml = fetch(stop_id);
-    print("doing scraping");
 
-    print(xml);
     data = etree.fromstring(xml);
-    print(data)
     for bus_data in data.iterchildren("*"): 
         bus = {}
         bus["schedules"] = []
