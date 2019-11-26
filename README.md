@@ -1,4 +1,4 @@
-BuSMS  -  Bus schedules, for your sms. 
+## BuSMS - Bus schedules, for your sms.
 
 FIRST: lets procrastinate: 
 
@@ -6,7 +6,7 @@ https://www.youtube.com/watch?v=2akbblhTfbM&t=9s
 
 FORMAT :  STOP_ID (BUS_ID BUS_ID) 
 
-STORY: 
+### Story: 
 
    - I was standing at the bus stop, wondering when the next bus would come. The stop didn't have the schedule board pinned on and it was frustrating .
 
@@ -16,49 +16,44 @@ STORY:
 
    - After 5 hours of hussling (mostly with ORM because Flask =)) ), I finally put up this service. I plan on using it a lot. 
 
-TECH INFO: 
+### TECH INFO
+* Hosted on a Google Cloud Instance
+* Python + [Flask](https://www.fullstackpython.com/flask.html) 
+* Redis caching
+* Twilio API: THE BEST sms service for developers: https://www.twilio.com/
+* Translink: Translink developer API: https://developer.translink.ca/
 
-	- Hosted on a google cloud instance 
+### Requirements
 
-	- Python + Flask 
+* Retrieve Translink Developer Key [here](https://developer.translink.ca/) and put it in `modules/fetcher.py'
+* Setup your own Twilio account and set SMS webhook to `/sms` endpoint in your Twilio console
+* Note: Your API must be public 
 
-	- Redis caching
+### How to run
+```
+// installing dependencies
+pip3 install flask 
+pip3 install requests lxml json redis 
+apt-get install redis-* 
 
-	- API: 
+// running
+python3 -m run flask 
+```
 
-	  + Twilio : THE BEST sms service for developers: https://www.twilio.com/
 
-	  + Translink: translink developer API: https://developer.translink.ca/
+### Usage
 
-INSTALL: 
+* The service when sees a new stop_id will fetch data from Translink API
 
-	- pip3 install flask 
+* It will then store the data in redis, along with the current timestamp. For the next 5 minutes, if there is a new request, the service will use the pre-loaded data from redis. (This will leave less load on Translink as well as making Busms faster)
 
-	- pip3 install requests lxml json redis 
+* There are some parsing, so that you can use bus ids after typing stop id. This will return data of specified buses.
 
-	- apt-get install redis-* 
-	 
-	- then: python3 -m run flask 
+### Future plans
 
-	- note: 
+* I have some python news scrapers that I will integrate in this service, so I can check my email, school mails, school notifications... (this is why I chose Python)
 
-		+ you need a translink developer KEY, put it in modules/fetcher.py
-
-		+ you need to put this on a production server, put the api /sms/ to twilio configuration in the "SMS service" section. 
-
-MECHANISM: 
-
-    - The service when sees a new stop_id will fetch data from Translink API
-
-    - It will then store the data in redis, along with the current timestamp. For the next 5 minutes, if there is a new request, the service will use the pre-loaded data from redis. (This will leave less load on Translink as well as making Busms faster)
-
-    - There are some parsing, so that you can use bus ids after typing stop id. This will return data of specified buses.
-
-FUTURE PLANS: 
-
-    - I have some python news scrapers that I will integrate in this service, so I can check my email, school mails, school notifications... (this is why I chose Python)
-
-    - I plan to play more with twilio, as their service are amazing and I don't have internet connection on my phone, so I rely a lot on sms. 
+* I plan to play more with twilio, as their service are amazing and I don't have internet connection on my phone, so I rely a lot on sms. 
 
 THANK YOU: 
 
